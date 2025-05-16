@@ -57,7 +57,7 @@ export const HowItWorks = () => {
             <li className="text-left link">
               <a
                 href="why.html"
-                className=" lg:px-[60px] lg:py-[13px] px-[25px] py-[9px] bg-primary text-white hover:bg-secondary  hover:text-white duration-500  text-lg font-bold rounded-lg "
+                className=" lg:px-[60px] lg:py-[13px] px-[25px] py-[9px] bg-gradient-to-r from-secondary to-primary text-white  duration-500  text-lg font-bold rounded-lg "
               >
                 Learn More
               </a>

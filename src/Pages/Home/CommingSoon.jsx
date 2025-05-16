@@ -51,7 +51,7 @@ export const CommingSoon = () => {
         <div className="text-center mt-10">
           <a
             href=""
-            className="lg:px-[70px] lg:py-[13px] px-[25px] py-[9px] bg-primary hover:bg-secondary hover:text-white duration-500 text-white text-lg font-bold rounded-lg"
+            className="lg:px-[70px] lg:py-[13px] px-[25px] py-[9px] bg-gradient-to-r from-primary to-secondary  duration-500 text-white text-lg font-bold rounded-lg"
           >
             Learn More
           </a>

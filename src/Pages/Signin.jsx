@@ -94,7 +94,7 @@ const Signin = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-primary text-white py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-all"
+            className="w-full bg-gradient-to-r from-primary to-secondary  text-white py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-all"
           >
             Login
           </button>

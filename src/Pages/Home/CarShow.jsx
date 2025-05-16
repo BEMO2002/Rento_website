@@ -39,7 +39,7 @@ const CarShow = () => {
                 <Link
                   id="rent"
                   to="/Rent"
-                  className="lg:px-[70px] lg:py-[13px] px-[25px] py-[9px] bg-primary rounded-lg text-white font-bold text-lg"
+                  className="lg:px-[70px] lg:py-[13px] px-[25px] py-[9px] bg-gradient-to-r from-primary to-secondary rounded-lg text-white font-bold text-lg"
                 >
                   Rent A Car
                 </Link>
@@ -63,7 +63,7 @@ const CarShow = () => {
                 src="/assets/home/car.webp"
                 alt="car home"
                 ref={imgRef}
-                className="w-[700px] pt-8 img transition-opacity duration-300 ease-in-out"
+                className="w-[700px] pt-8 img transition-opacity duration-300 ease-in-out "
               />
             </motion.div>
           </div>
