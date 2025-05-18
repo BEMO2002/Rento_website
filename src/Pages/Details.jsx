@@ -50,7 +50,6 @@ const Details = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Basic date validation
     if (new Date(rentalForm.returnDate) < new Date(rentalForm.pickupDate)) {
       toast.error("Return date must be after pickup date");
       setIsSubmitting(false);
@@ -89,13 +88,13 @@ const Details = () => {
     return (
       <div className="flex flex-col items-center justify-center h-screen">
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 max-w-md">
-          Error: {error}
+          You Must login First Sorry😅
         </div>
         <button
-          onClick={() => navigate("/rent")}
+          onClick={() => navigate("/signin")}
           className="px-4 py-2 bg-secondary text-white rounded hover:bg-primary transition-colors duration-300"
         >
-          Back to Car List
+          Back to Login Page
         </button>
       </div>
     );

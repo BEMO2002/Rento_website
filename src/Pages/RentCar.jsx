@@ -252,13 +252,13 @@ const RentCar = () => {
                   <div>
                     <p className="text-sm text-gray-500">Daily Rate</p>
                     <p className="text-lg font-bold text-blue-900">
-                      ${car.dailyRate}
+                      {car.dailyRate}EGP
                     </p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Weekly Rate</p>
                     <p className="text-lg font-bold text-blue-d00">
-                      ${car.weeklyRate}
+                      {car.weeklyRate}EGP
                     </p>
                   </div>
                   <button
