@@ -1,16 +1,15 @@
 import { Outlet } from "react-router";
 import { ProtectedRoute } from "../../Components/ProtectedRoute";
-import Navbar from "../../Components/Navbar";
-import { Footer } from "../../Components/Footer";
-import { MobileNav } from "../../Components/MobileNav";
+// import Navbar from "../../Components/Navbar";
+import { SideBar } from "./SideBar";
+import Header from "./Header";
 
 const DashLayout = () => {
   return (
     <ProtectedRoute>
-      <Navbar />
-      <MobileNav />
+      <Header />
+      <SideBar />
       <Outlet />
-      <Footer />
     </ProtectedRoute>
   );
 };

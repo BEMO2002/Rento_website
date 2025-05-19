@@ -3,7 +3,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { FaUserTie } from "react-icons/fa";
 import { FaAddressBook } from "react-icons/fa6";
-import { FcAlarmClock } from "react-icons/fc";
+import { FcAlarmClock, FcOk, FcCancel, FcProcess } from "react-icons/fc";
+
 const Reservations = () => {
   const [reservations, setReservations] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -30,6 +31,42 @@ const Reservations = () => {
 
     fetchReservations();
   }, []);
+
+  // Function to get status details based on StatusId
+  const getStatusDetails = (statusId) => {
+    switch (statusId) {
+      case 1:
+        return {
+          text: "Pending",
+          icon: <FcAlarmClock className="text-xl" />,
+          color: "text-yellow-500",
+        };
+      case 2:
+        return {
+          text: "Active",
+          icon: <FcProcess className="text-xl" />,
+          color: "text-blue-500",
+        };
+      case 3:
+        return {
+          text: "Completed",
+          icon: <FcOk className="text-xl" />,
+          color: "text-green-500",
+        };
+      case 4:
+        return {
+          text: "Canceled",
+          icon: <FcCancel className="text-xl" />,
+          color: "text-red-500",
+        };
+      default:
+        return {
+          text: "Unknown",
+          icon: <FcAlarmClock className="text-xl" />,
+          color: "text-gray-500",
+        };
+    }
+  };
 
   if (loading) {
     return (
@@ -78,47 +115,55 @@ const Reservations = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-900 ">
-              {reservations.map((reservation) => (
-                <tr key={reservation.id} className="hover:bg-gray-50">
-                  <td className="py-4 px-9 mx-auto">
-                    <FaUserTie className="text-center text-xl text-secondary" />
-                  </td>
-                  <td className="py-4 px-9 mx-auto">
-                    {reservation.car?.image ? (
-                      <img
-                        src={reservation.car.image}
-                        alt="Car"
-                        className="min-w-[100px] w-full max-w-[150px] h-auto rounded object-cover"
-                      />
-                    ) : (
-                      <img
-                        src="https://via.placeholder.com/150?text=Image+Not+Available"
-                        alt="Car"
-                        className="w-16 h-16 rounded-full object-cover"
-                      />
-                    )}
-                  </td>
-                  <td className="py-4 px-4">
-                    {reservation.car?.brand?.name} {reservation.car?.name}
-                  </td>
-                  <td className="py-4 px-4">
-                    {reservation.car?.brand?.color} {reservation.car?.color}
-                  </td>
-                  <td className="py-4 px-4">
-                    {reservation.car?.brand?.transmission}{" "}
-                    {reservation.car?.transmission}
-                  </td>
-                  <td className="py-4 px-4">
-                    {new Date(reservation.pickupDate).toLocaleDateString()}
-                  </td>
-                  <td className="py-4 px-4">
-                    {new Date(reservation.returnDate).toLocaleDateString()}
-                  </td>
-                  <td className="py-4 px-8 text-center">
-                    <FcAlarmClock className="text-xl" />
-                  </td>
-                </tr>
-              ))}
+              {reservations.map((reservation) => {
+                const status = getStatusDetails(reservation.statusId);
+                return (
+                  <tr key={reservation.id} className="hover:bg-gray-50">
+                    <td className="py-4 px-9 mx-auto">
+                      <FaUserTie className="text-center text-xl text-secondary" />
+                    </td>
+                    <td className="py-4 px-9 mx-auto">
+                      {reservation.car?.image ? (
+                        <img
+                          src={reservation.car.image}
+                          alt="Car"
+                          className="min-w-[100px] w-full max-w-[150px] h-auto rounded object-cover"
+                        />
+                      ) : (
+                        <img
+                          src="https://via.placeholder.com/150?text=Image+Not+Available"
+                          alt="Car"
+                          className="w-16 h-16 rounded-full object-cover"
+                        />
+                      )}
+                    </td>
+                    <td className="py-4 px-4">
+                      {reservation.car?.brand?.name} {reservation.car?.name}
+                    </td>
+                    <td className="py-4 px-4">
+                      {reservation.car?.brand?.color} {reservation.car?.color}
+                    </td>
+                    <td className="py-4 px-4">
+                      {reservation.car?.brand?.transmission}{" "}
+                      {reservation.car?.transmission}
+                    </td>
+                    <td className="py-4 px-4">
+                      {new Date(reservation.pickupDate).toLocaleDateString()}
+                    </td>
+                    <td className="py-4 px-4">
+                      {new Date(reservation.returnDate).toLocaleDateString()}
+                    </td>
+                    <td className="py-4 px-4">
+                      <div
+                        className={`flex items-center gap-2 ${status.color}`}
+                      >
+                        {status.icon}
+                        {status.text}
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
