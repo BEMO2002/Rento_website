@@ -22,6 +22,7 @@ import Details from "./Pages/Details";
 import ReservLayout from "./Pages/ReservationLayout.jsx/ReservLayout";
 import Reservations from "./Pages/ReservationLayout.jsx/Reservations";
 import Brands from "./Pages/Dashboard/Brands";
+import RentedCars from "./Pages/Dashboard/RentedCars";
 
 const App = () => {
   return (
@@ -53,8 +54,9 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Route>
         <Route path="/" element={<DashLayout />}>
-          <Route path="/table" element={<Table />} />
+          <Route path="/dashboard" element={<Table />} />
           <Route path="/brands" element={<Brands />} />
+          <Route path="/Rented" element={<RentedCars />} />
         </Route>
         <Route path="/res" element={<ReservLayout />}>
           <Route index element={<Reservations />} />

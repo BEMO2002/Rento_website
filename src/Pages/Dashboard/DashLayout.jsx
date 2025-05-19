@@ -1,6 +1,5 @@
 import { Outlet } from "react-router";
 import { ProtectedRoute } from "../../Components/ProtectedRoute";
-// import Navbar from "../../Components/Navbar";
 import { SideBar } from "./SideBar";
 import Header from "./Header";
 
