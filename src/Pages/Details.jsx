@@ -3,7 +3,17 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { HiOutlineArrowLongLeft } from "react-icons/hi2";
 import { toast } from "react-toastify";
-
+import {
+  FaCar,
+  FaPalette,
+  FaExchangeAlt,
+  FaMoneyBillWave,
+  FaUndo,
+  FaCalendarAlt,
+  FaGasPump,
+  FaTachometerAlt,
+  FaCogs,
+} from "react-icons/fa";
 const Details = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -124,25 +134,37 @@ const Details = () => {
           />
           <div className="mt-6 grid grid-cols-2 gap-4">
             <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="text-gray-600">Daily Rate</p>
-              <p className="text-xl font-bold text-blue-900">
+              <p className="text-gray-600 flex items-center gap-1">
+                <FaCalendarAlt />
+                Daily Rate
+              </p>
+              <p className="text-xl font-bold text-black">
                 {car.dailyRate}
-                <span className="text-black">EGP</span>
+                <span className="text-black text-sm">EGP</span>
               </p>
             </div>
             <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="text-gray-600">Weekly Rate</p>
-              <p className="text-xl font-bold text-blue-900">
+              <p className="text-gray-600 flex items-center gap-1">
+                <FaCalendarAlt />
+                Weekly Rate
+              </p>
+              <p className="text-xl font-bold text-black">
                 {car.weeklyRate}
-                <span className="text-black">EGP</span>
+                <span className="text-black text-sm">EGP</span>
               </p>
             </div>
             <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="text-gray-600">Color</p>
+              <p className="text-gray-600 flex items-center gap-1">
+                <FaPalette />
+                Color
+              </p>
               <p className="font-medium">{car.color}</p>
             </div>
             <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="text-gray-600">Transmission</p>
+              <p className="text-gray-600 flex items-center gap-1">
+                <FaTachometerAlt />
+                Transmission
+              </p>
               <p className="font-medium">{car.transmission}</p>
             </div>
           </div>

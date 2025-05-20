@@ -174,7 +174,7 @@ const RentedCars = () => {
                 <div className="flex items-center gap-2 text-gray-600">
                   <span>Daily Rate:</span>
                   <span className="font-medium">
-                    ${rental.car.dailyRate.toFixed(2)}
+                    {rental.car.dailyRate.toFixed(2)}EGP
                   </span>
                 </div>
               </div>
@@ -201,7 +201,7 @@ const RentedCars = () => {
                   <div className="flex items-center gap-2 text-lg font-bold text-gray-800">
                     <FaMoneyBillWave className="text-green-500" />
                     <span>Total:</span>
-                    <span>${rental.totalPrice.toFixed(2)}</span>
+                    <span>{rental.totalPrice.toFixed(2)}EGP</span>
                   </div>
                   <span className="text-sm text-gray-500">
                     Booked on {new Date(rental.createdAt).toLocaleDateString()}
