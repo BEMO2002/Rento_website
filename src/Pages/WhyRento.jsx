@@ -3,7 +3,7 @@ import { fadeIn } from "../Framermotion/varient";
 export const WhyRento = () => {
   return (
     <div class="pt-20 pb-20">
-      <div class="container mx-auto">
+      <div class="container mx-auto overflow-hidden">
         <div class="flex items-center justify-center w-full">
           <div class="w-1/12 border-t-2 border-primary"></div>
           <span class="mx-4 text-3xl lg:text-4xl font-bold ">

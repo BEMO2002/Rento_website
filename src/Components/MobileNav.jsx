@@ -68,7 +68,7 @@ export const MobileNav = () => {
         <ul className="flex flex-col gap-y-10 pt-10 font-semibold ml-4 mb-2">
           {[
             {
-              href: "rent.html",
+              to: "/rent",
               icon: "/assets/home/buyCarIcon.eeb2e066.svg",
               label: "Browse All Cars",
             },

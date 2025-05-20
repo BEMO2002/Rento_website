@@ -126,13 +126,15 @@ const Details = () => {
             <div className="bg-gray-50 p-4 rounded-lg">
               <p className="text-gray-600">Daily Rate</p>
               <p className="text-xl font-bold text-blue-900">
-                ${car.dailyRate}
+                {car.dailyRate}
+                <span className="text-black">EGP</span>
               </p>
             </div>
             <div className="bg-gray-50 p-4 rounded-lg">
               <p className="text-gray-600">Weekly Rate</p>
               <p className="text-xl font-bold text-blue-900">
-                ${car.weeklyRate}
+                {car.weeklyRate}
+                <span className="text-black">EGP</span>
               </p>
             </div>
             <div className="bg-gray-50 p-4 rounded-lg">
