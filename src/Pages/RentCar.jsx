@@ -88,7 +88,7 @@ const RentCar = () => {
   if (loading) {
     return (
       <div className="flex flex-col justify-center items-center h-screen bg-gray-50">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-600 mb-4"></div>
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-900 mb-4"></div>
         <p className="text-gray-600 text-lg">Loading available cars...</p>
       </div>
     );

@@ -8,10 +8,12 @@ const Signin = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [showPass, setShowPass] = useState(false);
   const { isAuthenticated, Signout, Signin } = useAuth();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigator = useNavigate();
 
   const submitHandler = async (ev) => {
     ev.preventDefault();
+    setIsSubmitting(true);
     if (isAuthenticated) Signout();
 
     try {
@@ -25,15 +27,17 @@ const Signin = () => {
       toast.error(error.response?.data || "Login failed!", {
         theme: "colored",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="auth-container flex items-center justify-center p-4">
+    <div className="auth-container min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="text-center mt-2 hidden lg:flex"></div>
       <form
         onSubmit={submitHandler}
-        className="form-container w-full max-w-md p-8 rounded-2xl shadow-2xl"
+        className="form-container bg-white w-full max-w-md p-8 rounded-2xl shadow-2xl"
       >
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-3">
@@ -92,11 +96,13 @@ const Signin = () => {
               Password must be at least 6 characters
             </span>
           </div>
+
           <button
             type="submit"
             className="w-full bg-gradient-to-r from-primary to-secondary  text-white py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-all"
+            disabled={isSubmitting}
           >
-            Login
+            {isSubmitting ? "Logging in..." : "Login"}
           </button>
           <p className="text-center text-sm">
             Don't have an account?

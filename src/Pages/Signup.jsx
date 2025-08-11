@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     FirstName: "",
     LastName: "",
@@ -19,7 +20,7 @@ const Signup = () => {
 
   const submitHandler = async (ev) => {
     ev.preventDefault();
-
+    setIsSubmitting(true);
     try {
       const userData = await Signup(
         formData.FirstName,
@@ -38,6 +39,8 @@ const Signup = () => {
       toast.error(error.response?.data || "Login failed!", {
         theme: "colored",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -176,8 +179,9 @@ const Signup = () => {
             id="signupBtn"
             className="w-full bg-gradient-to-r from-primary to-secondary  text-white py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-all"
             type="submit"
+            disabled={isSubmitting}
           >
-            Sign Up
+            {isSubmitting ? "Signing up..." : "Sign Up"}
           </button>
           <p className="text-center text-sm">
             Already have an account?

@@ -6,7 +6,7 @@ export const Offer = () => {
 
   return (
     <>
-      <div className="fixed left-[-41px] top-[48%] translate-y-[50%] z-10">
+      <div className="fixed left-[-41px] top-[48%] translate-y-[50%] z-20">
         <button
           onClick={() => setIsPopupOpen(true)}
           className="bg-[#000] text-white p-2 text-sm rotate-90 inline-block font-bold tracking-widest rounded-b-none"
