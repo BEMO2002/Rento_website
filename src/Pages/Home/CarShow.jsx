@@ -39,13 +39,13 @@ const CarShow = () => {
                 <Link
                   id="rent"
                   to="/Rent"
-                  className="lg:px-[70px] lg:py-[13px] px-[25px] py-[9px] bg-gradient-to-r from-primary to-secondary rounded-lg text-white font-bold text-lg"
+                  className="lg:px-[70px] lg:py-[13px] px-[25px] py-[9px] bg-gradient-to-r from-primary to-secondary rounded-lg text-white font-bold text-lg flash-button"
                 >
                   Rent A Car
                 </Link>
                 <Link
                   to="/cars/add"
-                  className="lg:px-[70px] lg:py-[13px] px-[25px] py-[9px] bg-secondary rounded-lg text-white font-bold text-lg"
+                  className="lg:px-[70px] lg:py-[13px] px-[25px] py-[9px] bg-secondary rounded-lg text-white font-bold text-lg flash-button"
                 >
                   Add Your Car
                 </Link>

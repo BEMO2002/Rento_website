@@ -110,7 +110,7 @@ export const MobileNav = () => {
         <hr />
 
         <div className="flex flex-col items-center mt-8 gap-4">
-          <Link className="px-20 py-3 bg-primary rounded-lg text-white font-bold text-xl">
+          <Link className="flash-button px-20 py-3 bg-primary rounded-lg text-white font-bold text-xl">
             Rent A Car
           </Link>
         </div>
