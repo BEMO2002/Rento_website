@@ -1,4 +1,4 @@
-import CarShow from "./Carshow";
+import CarShow from "./CarShow";
 import { Certificates } from "./Certificates";
 import { Flipers } from "./Flipers";
 import { HowItWorks } from "./HowItWorks";
